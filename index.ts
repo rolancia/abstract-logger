@@ -6,12 +6,14 @@ type LogProcs = {
     info: LogProc,
     warn: LogProc
     error: LogProc,
+    debug: LogProc
 };
 enum LogLevel {
     LOG = 'Log',
     INFO = 'Info',
     WARN = 'Warn',
-    ERROR = 'Error'
+    ERROR = 'Error',
+    DEBUG = 'Debug'
 }
 
 let __defaultHead = 'ABSLogger:%s:';
@@ -33,6 +35,11 @@ let _defaultProcs: LogProcs = {
         return false;
     },
     error: (message, ...args: any[]) => {
+        const logLevelStr = LogLevel.ERROR.padEnd(5, ' ')
+        console.error(_defaultHead + message, logLevelStr, ...args);
+        return false;
+    },
+    debug: (message, ...args: any[]) => {
         const logLevelStr = LogLevel.ERROR.padEnd(5, ' ')
         console.error(_defaultHead + message, logLevelStr, ...args);
         return false;
@@ -70,6 +77,10 @@ export function error(message: string, ...args: any[]): void {
     _log(LogLevel.ERROR, message, ...args);
 }
 
+export function debug(message: string, ...args: any[]): void {
+    _log(LogLevel.DEBUG, message, ...args);
+}
+
 function _log(level: LogLevel, message: string, ...args: any[]): void {
     const proc = _getLogProc(level);
     
@@ -80,6 +91,7 @@ function _log(level: LogLevel, message: string, ...args: any[]): void {
             else if (level === LogLevel.INFO) _defaultProcs.info(message, ...args);
             else if (level === LogLevel.WARN) _defaultProcs.warn(message, ...args);
             else if (level === LogLevel.ERROR) _defaultProcs.error(message, ...args);
+            else if (level === LogLevel.DEBUG) _defaultProcs.debug(message, ...args);
         }
     }
 }
@@ -89,4 +101,5 @@ function _getLogProc(level: string): LogProc | undefined {
     else if (level === LogLevel.INFO) return _procs.info ? _procs.info : _defaultProcs.info;
     else if (level === LogLevel.WARN) return _procs.warn ? _procs.warn : _defaultProcs.warn;
     else if (level === LogLevel.ERROR) return _procs.error ? _procs.error : _defaultProcs.error;
+    else if (level === LogLevel.DEBUG) return _procs.debug ? _procs.debug : _defaultProcs.debug;
 }

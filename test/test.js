@@ -8,6 +8,7 @@ describe('abstract logger test', () => {
     ABSLogger.info('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.warn('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.error('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
+    ABSLogger.debug('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
   });
   
   it('console style logging with custom header', () => {
@@ -16,6 +17,7 @@ describe('abstract logger test', () => {
     ABSLogger.info('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.warn('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.error('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
+    ABSLogger.debug('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
   });
 
   it ('overrided logging', () => {
@@ -34,11 +36,16 @@ describe('abstract logger test', () => {
         error: (message, ...args) => {
             console.log('I WILL UPLOAD ERROR LOGS TO MY DB AND CONSOLE ALSO');
             return true;
+        },
+        debug: (message, ...args) => {
+            console.log('Message: %s', message);
+            return false;
         }
     });
     ABSLogger.log('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.info('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.warn('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
     ABSLogger.error('Okay. Nice foods! First: %s, Second: %s', 'Kimchi', 'Chicken');
+    ABSLogger.debug('Debug Message');
   });
 })

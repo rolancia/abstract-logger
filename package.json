@@ -1,5 +1,5 @@
 {
-  "name": "abstract-logger",
+  "name": "rolancia-abstract-logger",
   "version": "1.0.0",
   "description": "A Logger for logging in abstract way",
   "main": "dist/index.js",
