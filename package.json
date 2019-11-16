@@ -1,0 +1,29 @@
+{
+  "name": "abstract-logger",
+  "version": "1.0.0",
+  "description": "A Logger for logging in abstract way",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolancia/abstract-logger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolancia/abstract-logger/issues"
+  },
+  "homepage": "https://github.com/rolancia/abstract-logger#readme",
+  "dependencies": {
+    "@types/node": "^12.12.8",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  }
+}
