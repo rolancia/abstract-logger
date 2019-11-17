@@ -1,6 +1,6 @@
 # rolancia-abstract-logger
 
-## about
+## About
 
 rolancia-abstract-logger is a logger that provides easy logging processes for js, ts.
   
@@ -8,8 +8,39 @@ when you start to develop, you might want just leave it in console style logging
   
 that's what it does.
 
-  
-## example
+## Installation
+
+```
+npm install --save rolancia-abstract-logger
+```
+
+## Import
+
+Typescript
+```
+Import {
+    init,
+    LogProc,
+    LogProcs,
+    log,
+    info,
+    warn,
+    error,
+    debug
+} from 'rolancia-abstract-logger';
+```
+
+Javascript
+```
+const absLogger = require('rolancia-abstract-logger);
+const log = absLogger.log;
+const info = absLogger.info;
+const warn = absLogger.warn;
+const error = absLogger.error;
+const debug = absLogger.debug;
+```
+
+## Example
 
 ### At start of development
 
@@ -67,4 +98,9 @@ const simpleLog: LogProc = (message: string, args: any[]): boolean =>
 
     return false;
 }
+```
+
+## Test
+```
+npm test
 ```
