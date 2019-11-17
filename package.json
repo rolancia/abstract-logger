@@ -1,6 +1,6 @@
 {
   "name": "rolancia-abstract-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Logger for logging in abstract way",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,5 +25,13 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.2.2"
-  }
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "abstract logger",
+    "nodejs",
+    "nodejs log",
+    "nodejs logger"
+  ]
 }
