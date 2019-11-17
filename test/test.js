@@ -1,6 +1,7 @@
 'use strict';
 var expect = require('chai').expect;
 var ABSLogger = require('../dist/index.js');
+console.log(require('../dist/index'))
 
 describe('abstract logger test', () => {
   it('console style logging', () => {

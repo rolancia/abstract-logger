@@ -1,14 +1,14 @@
 import * as fs from 'fs';
 
-type LogProc = (message: string, ...args: any[]) => boolean | undefined;
-type LogProcs = {
+export type LogProc = (message: string, ...args: any[]) => boolean | undefined;
+export type LogProcs = {
     log: LogProc,
     info: LogProc,
     warn: LogProc
     error: LogProc,
     debug: LogProc
 };
-enum LogLevel {
+export enum LogLevel {
     LOG = 'Log',
     INFO = 'Info',
     WARN = 'Warn',
