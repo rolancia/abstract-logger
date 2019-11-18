@@ -40,7 +40,7 @@ let _defaultProcs: LogProcs = {
         return false;
     },
     debug: (message, ...args: any[]) => {
-        const logLevelStr = LogLevel.ERROR.padEnd(5, ' ')
+        const logLevelStr = LogLevel.DEBUG.padEnd(5, ' ')
         console.error(_defaultHead + message, logLevelStr, ...args);
         return false;
     },
