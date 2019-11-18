@@ -49,7 +49,7 @@ import {
     init, log, error, LogProc, LogProcs
     } from 'rolancia-abstract-logger';
 
-const simpleLog: LogProc = (message: string, args: any[]): boolean =>
+const simpleLog: LogProc = (message: string, args: any[]): boolean => {
     console.log(message, ...args);
     // write a simple logging procedure for testing.
 
@@ -90,7 +90,7 @@ function cook(name: string, ingredients: Food) {
 ### At end of development
 
 ```ts
-const simpleLog: LogProc = (message: string, args: any[]): boolean =>
+const simpleLog: LogProc = (message: string, args: any[]): boolean => {
     // just rewrite or replace your log procedure code
     fs.appendFile('log.txt', util.format(message, args), (err) => {
         if (err) throw err;
