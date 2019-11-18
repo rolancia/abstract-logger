@@ -1,6 +1,6 @@
 {
   "name": "rolancia-abstract-logger",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Logger for logging in abstract way",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
